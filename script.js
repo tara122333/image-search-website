@@ -5,7 +5,7 @@ const searchForm = document.getElementById("search-form");
 const searchBtn = document.getElementById("search-btn");
 const imageResult = document.getElementById("image-result");
 const loader = document.getElementById("loader");
-
+const showMoreForm = document.getElementById("show-more-form");
 
 let page = 1;
 const perPageValue = 30;
@@ -29,19 +29,28 @@ async function fetchImages() {
     imageResult.appendChild(imageLinks);
     imageLinks.appendChild(image);
   });
+  showMoreForm.style.display = "flex";
   isLoading = false;
   addLoadingComponent();
 }
 
 function addLoadingComponent() {
   if (isLoading) {
-    loader.style.display = 'flex';
+    loader.style.display = "flex";
+    showMoreForm.style.display = "none";
   } else {
-    loader.style.display = 'none';
+    loader.style.display = "none";
+    showMoreForm.style.display = "flex";
   }
 }
 
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
+  fetchImages();
+});
+
+showMoreForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  page = page + 1;
   fetchImages();
 });
