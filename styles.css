@@ -21,28 +21,31 @@
 }
 
 .title {
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .search-bar {
   border: 1px solid white;
-  padding: 4px 12px;
+  padding: 3px 8px;
   border-radius: 30px;
   width: fit-content;
   background-color: transparent;
+  display: flex;
+  gap: 6px;
 }
 
 .image-search-input {
   outline: none;
   border: none;
   background-color: transparent;
-  width: 350px;
+  width: 100%;
   padding: 2px 20px;
   font-size: 15px;
+  border-radius: 30px;
 }
 
 .btn {
-  padding: 12px 30px;
+  padding: 6px 15px;
   background-color: rgb(4, 169, 4);
   outline: none;
   border: none;
@@ -55,7 +58,7 @@
 }
 
 #image-result {
-  padding: 30px 0px;
+  padding: 30px 10px;
   display: flex;
   width: 100%;
   flex-wrap: wrap;
@@ -66,7 +69,8 @@
 #image-result img {
   cursor: pointer;
   border-radius: 8px;
-  object-fit: cover;
+  object-fit: fill;
+  width: 100%;
 }
 
 .flex-box {
@@ -94,6 +98,28 @@
 #show-more-form {
   display: none;
   margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 600px) {
+  .title {
+    font-weight: bold;
+  }
+
+  .search-bar {
+    padding: 4px 12px;
+  }
+
+  .image-search-input {
+    width: 350px;
+  }
+
+  .btn {
+    padding: 12px 30px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
 }
 
 @-webkit-keyframes spin {
