@@ -53,3 +53,18 @@
 .search-btn:hover {
   background-color: rgb(11, 205, 11);
 }
+
+#image-result {
+  padding: 30px 0px;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+#image-result img {
+  cursor: pointer;
+  border-radius: 8px;
+  object-fit: cover;
+}
